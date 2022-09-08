@@ -1,28 +1,25 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: ".env" });
 
-ALCHEMY_API_KEY_URL =
-  "https://eth-rinkeby.alchemyapi.io/v2/pRoXHc29FCR8mTtTWWUwPS4kFk04P67d";
+const ALCHEMY_API_KEY_URL =
+  "https://polygon-mumbai.g.alchemy.com/v2/OCQgwyIZHBQk_K_6aIIvQI7M2gD4mFk9";
 
-const RINKEBY_PRIVATE_KEY =
+const MUMBAI_PRIVATE_KEY =
   "f04f5d6a844e8a4fd7666fd1e1ac6e201812eee88da8992fa4fa34620e0ebde2";
 
-// Go to https://polygonscan.com/, sign up, on your account overview page,
-// click on `API Keys`, add a new API key and copy the
-// `API Key Token`
-POLYGONSCAN_KEY = "3NRNU2MBVINTPGDEGFYW87BT66PDFWB21F";
+const POLYGONSCAN_KEY = "G1X22WNBAWVTCI5W6NRIQ1ATMV7GT9GFPK";
 
 module.exports = {
   solidity: "0.8.4",
   networks: {
-    rinkeby: {
+    mumbai: {
       url: ALCHEMY_API_KEY_URL,
-      accounts: [RINKEBY_PRIVATE_KEY],
+      accounts: [MUMBAI_PRIVATE_KEY],
     },
   },
   etherscan: {
     apiKey: {
-      rinkeby: POLYGONSCAN_KEY,
+      polygonMumbai: POLYGONSCAN_KEY,
     },
   },
 };
